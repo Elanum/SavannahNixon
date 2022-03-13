@@ -1,14 +1,21 @@
+import classNames from 'classnames';
+import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
-import Head from 'next/head';
 import './styles.css';
 
 function CustomApp({ Component, pageProps }: AppProps) {
+  const title = 'Savannah Nixon Photography';
+  const description = 'Savannah Nixon Photography';
+
   return (
     <>
-      <Head>
-        <title>Welcome to frontend!</title>
-      </Head>
-      <main className="app">
+      <DefaultSeo
+        titleTemplate={`%s | ${title}`}
+        defaultTitle={title}
+        description={description}
+        openGraph={{ type: 'website', title, description }}
+      />
+      <main className={classNames('flex', 'flex-col', 'min-h-screen')}>
         <Component {...pageProps} />
       </main>
     </>
