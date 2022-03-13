@@ -5,6 +5,7 @@ enum Route {
   Home = '/',
   Shop = '/shop',
   Portfolio = '/portfolio',
+  News = '/news',
   Contact = '/kontakt',
   Impress = '/impressum',
   AboutMe = '/uber-mich',
